@@ -23,6 +23,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .search-box {
@@ -41,6 +43,8 @@
     float: left;
     opacity: 0.8;
     transition: ease all 0.2s;
+    outline: none;
+    border: 0px;
 }
 
 .search-box input:focus {

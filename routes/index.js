@@ -1,4 +1,5 @@
 const mdb = require('moviedb')('a564e5e6ccf05956046bad91fa92f76c');
+var movieTrailer = require('movie-trailer');
 
 //home
 exports.home = function(req, res) {
@@ -19,11 +20,18 @@ exports.result = function(req, res) {
 //full movie info 
 exports.fullinfo = function(req, res) {
     var id = req.params.id;
+    var ytid;
     mdb.movieInfo({ id: id }, (err, data) => {
-        res.render('fullinfo', {
-            data: data,
-            id: id
-        })
+        movieTrailer(data.title, data.release_date.split('-', 1), true,function (err, ytdata) {
+            if(ytdata[0].key == undefined || ytid == null)
+                ytid = "RIP";
+            ytid = ytdata[0].key;
+            res.render('fullinfo', {
+                data: data,
+                ytid: ytid,
+                id: id
+            })
+        });        
     });
 }
 

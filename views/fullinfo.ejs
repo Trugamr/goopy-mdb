@@ -1,51 +1,90 @@
 <html>
-    <head>
-        <title><%= data.title %></title>
-        <link rel="stylesheet" href="./css/styles_fullinfo.css">
-        <link rel="stylesheet" href="./css/scrollbar.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
-    </head>
-    <body>
-        <div class="main">
-            <div class="containerLeft" id="crL">
-                <img  id="masshead" src="https://image.tmdb.org/t/p/w1920<%= data.backdrop_path %>">
-                <img src="https://image.tmdb.org/t/p/w500<%= data.poster_path %>">
+
+<head>
+    <title>
+        <%= data.title %>
+    </title>
+    <link rel="stylesheet" href="./css/styles_fullinfo.css">
+    <link rel="stylesheet" href="./css/scrollbar.css">
+    <link rel="stylesheet" href="./css/remodal.css">
+    <link rel="stylesheet" href="./css/remodal-default-theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main remodal-bg">
+        <div class="remodal" data-remodal-id="youtube-trailer" id>
+            <iframe class="trailer-player" width="800" height="450" src="https://www.youtube.com/embed/<%= ytid %>?version=3&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="containerLeft" id="crL">
+            <img id="masshead" src="https://image.tmdb.org/t/p/w1920<%= data.backdrop_path %>">
+            <img src="https://image.tmdb.org/t/p/w500<%= data.poster_path %>">
+        </div>
+        <div class="containerRight" id="crR">
+            <p id="title" title="<%= data.title %>">
+                <span>
+                    <%= data.title %>
+                </span>
+            </p>
+            <p id="year">(<%= data.release_date.split('-')[0] %>)</p>
+            <p id="overview-title">Overview</p>
+            <p id="overview">
+                <%= data.overview %>
+            </p>
+            <div class="ex">
+                <p id="runtime-title" class="wy">Runtime</p>
+                <p id="runtime" class="zi">
+                    <%= data.runtime %> min</p>
             </div>
-            <div class="containerRight" id="crR">
-                <p id="title" title="<%= data.title %>"><span><%= data.title %></span></p>
-                <p id="year">(<%= data.release_date.split('-', 1) %>)</p>
-                <p id="overview-title">Overview</p>
-                <p id="overview"><%= data.overview %></p>
-                <div class="ex">
-                        <p id="runtime-title" class="wy">Runtime</p>
-                        <p id="runtime" class="zi"><%= data.runtime %> min</p>
-                </div>
-                <div class="ex">
-                        <p id="rating-title" class="wy">Rating</p>
-                        <% var stars = Math.floor(data.vote_average)/2 %>
-                        <% var half = 0; if(data.vote_average - Math.floor(data.vote_average) >= 0.5) { half = 1}; %>
-                        <p id="rating" class="zi">
-                            <% for(var i = 0; i < stars; i++) { %>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                            <% } %>
-                            <% if(half) {%>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                            <% } %>
-                        </p>
-                </div>
-                <div class="genres ex">
-                    <p id="genres-title" class="wy">Genres</p>
-                    <% var genresAll = []; for(var i = 0; i < data.genres.length; i++) { genresAll.push(data.genres[i].name)}; %>
-                    <p id="genres" class="zi"><%= genresAll.join(", ") %></p>
-                </div>
-                <div class="ex">
-                    <p id="production-title" class="wy">Produced By</p>
-                    <% if(data.production_companies.length > 3 ) { data.production_companies.length = 3 }; var productionAll = []; for(var i = 0; i < data.production_companies.length; i++) { productionAll.push(data.production_companies[i].name)}; %>
-                    <p id="production" class="zi"><%- productionAll.join("<br>") %></p>
-                </div>
+            <div class="ex">
+                    <p id="release-title" class="wy">Release Date</p>
+                    <p id="release" class="zi">
+                        <% var month = ['XD', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
+                        <%= month[data.release_date.split('-')[1]] %> <%=  data.release_date.split('-')[2] %>, <%=  data.release_date.split('-')[0] %>
+                    </p>
+            </div>
+            <div class="ex">
+                <p id="rating-title" class="wy">Rating</p>
+                <% var stars = Math.floor(data.vote_average)/2 %>
+                <% var half = 0; if(data.vote_average - Math.floor(data.vote_average) >= 0.5) { half = 1}; %>
+                    <p id="rating" class="zi">
+                    <% for(var i = 0; i < stars; i++) { %>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    <% } %>
+                    <% if(half) {%>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <% } %>
+                 </p>
+            </div>
+            <div class="genres ex">
+                <p id="genres-title" class="wy">Genres</p>
+                <% var genresAll = []; for(var i = 0; i < data.genres.length; i++) { genresAll.push(data.genres[i].name)}; %>
+                    <p id="genres" class="zi">
+                        <%= genresAll.join(", ") %>
+                    </p>
+            </div>
+            <div class="ex">
+                <p id="production-title" class="wy">Produced By</p>
+                <% if(data.production_companies.length > 3 ) { data.production_companies.length = 3 }; var productionAll = []; for(var i = 0; i < data.production_companies.length; i++) { productionAll.push(data.production_companies[i].name)}; %>
+                    <p id="production" class="zi">
+                        <%- productionAll.join("<br>") %>
+                    </p>
+            </div>
+            <div class="footer">
+                <p class="youtube-icon" data-remodal-target="youtube-trailer"><i class="fa fa-lg fa-youtube-play"></i> Trailer</p>
             </div>
         </div>
-        <script src="https://use.fontawesome.com/8aa0402897.js"></script>
-        </script>
-    </body>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/8aa0402897.js"></script>
+    <script src="./scripts/remodal.js"></script>
+    <script>
+            function stopYoutube() {
+                $('.trailer-player').each(function () {
+                    this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+                });
+            };
+    </script>
+</body>
 </html>

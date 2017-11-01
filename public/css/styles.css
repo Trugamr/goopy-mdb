@@ -4,12 +4,13 @@
 }
 
 body {
-    background-color: white;
+    background-image: url('../images/results.jpg');
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 .container {
     padding: 40px;
-    padding-top: 50px;
 }
 
 .card {
@@ -59,6 +60,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; 
+    transform: translateZ(0);
 }
 
 #title {

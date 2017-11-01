@@ -6,15 +6,13 @@
   "dependencies": {
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "movie-trailer": "^1.0.3",
     "moviedb": "^0.2.10"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
-  },
-  "engines": {
-    "node": "8.8.1"
   },
   "author": "",
   "license": "ISC"

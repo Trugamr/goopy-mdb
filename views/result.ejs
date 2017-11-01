@@ -16,7 +16,11 @@
                         <p id="year"><%= data.results[i].release_date.split('-', 1) %></p>
                     </div>
                 </div>
+                <% if(data.results.length - i == 1) { %>
+                    <div class="spacer" style="margin-bottom: 40px; display: block; width: 100%; float: right;"></div>
+                <% } %>
             <% } %>
+           
         </div>
         <% include partials/scripts.ejs %>       
     </body>

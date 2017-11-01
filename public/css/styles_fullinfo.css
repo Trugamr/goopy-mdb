@@ -97,11 +97,11 @@
     margin-top: 20px;
 }
 
-#runtime-title, #genres-title, #production-title, #rating-title {
+#runtime-title, #genres-title, #production-title, #rating-title, #release-title {
     color: #303030;
 }
 
-#runtime, #genres, #production, #rating {
+#runtime, #genres, #production, #rating, #release {
     color: #505050;
     margin-right: 20px;
     overflow: hidden;
@@ -128,4 +128,29 @@
     vertical-align: top;
 }
 
+.footer {
+    width: inherit;
+    position: absolute;
+    right: 0;
+    bottom: 20;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    margin-left: -10px;
+}
 
+.youtube-icon i {
+    color: #EE6352;
+    line-height: 30px;
+    font-size: 35px;
+}
+
+.youtube-icon {
+    color: #505050 !important;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 105px;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
