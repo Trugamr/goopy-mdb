@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Results for <%= search %></title>
+        <% include partials/head.ejs %>
+    </head>
+    <body>
+        <div class="container">
+            <% for(var i = 0; i < data.results.length; i++) { %>
+                <div class="card" onclick = "fullInfo( <%= data.results[i].id %> )">
+                    <div class="card-img">
+                        <% var poster = "https://image.tmdb.org/t/p/w300" + data.results[i].poster_path; if(data.results[i].poster_path == null) {var poster = "./images/notfound.png"} %>
+                        <img src = "<%= poster %>">                    
+                    </div>
+                    <div class="card-info">
+                        <p id="title" title="<%= data.results[i].title %>"><%= data.results[i].title %></p>
+                        <p id="year"><%= data.results[i].release_date.split('-', 1) %></p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <% include partials/scripts.ejs %>       
+    </body>
+</html>

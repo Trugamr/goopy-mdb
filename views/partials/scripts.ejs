@@ -1,0 +1,30 @@
+<script>
+    function search() {
+        var search = document.getElementById('search').value;
+        window.open(window.origin + "/search=" + search, '_self');
+    }
+    function fullInfo(id) {
+        window.open(window.origin + "/id=" + id, '_self');
+    }
+</script>
+<script src="https://use.fontawesome.com/8aa0402897.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.1.21/tilt.jquery.min.js"></script>
+<script>
+    $("#search").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#go-button").click();
+        }
+    });
+</script>
+<script>
+    $('.card').tilt({
+        glare: true,
+        maxGlare: .3,
+        transition: true,
+        scale: 1.2,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        perspective: 600
+    })
+</script>
+

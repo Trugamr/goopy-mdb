@@ -1,0 +1,131 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.containerLeft, .containerRight {
+    width: 50%;
+    height: 100%;
+    float: left;    
+}
+
+.containerLeft {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerLeft img:first-child {
+    height: inherit;
+    position: absolute;    
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    filter: blur(10px) brightness(0.75);
+    transform: scale(1.1); 
+}
+
+.containerLeft img:nth-child(2) {
+    height: 450px;
+    width: auto;
+    position: absolute;
+    z-index: 2;
+    border-radius: 10px;
+    box-shadow: 0px 12px 66px -17px rgba(0,0,0,0.75);
+}
+
+.containerRight {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.containerRight p {
+    margin-left: 40px;
+    font-family: Montserrat, sans-serif;   
+    color: #303030; 
+    
+}
+
+#title {
+    margin-top: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 45px;
+    height: 50px;
+    line-height: 50px;
+    width: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#year {
+    font-size: 35px;
+    font-weight: 700;
+    color: #707070;
+}
+
+#overview-title {
+    margin-top: 30px;
+    color: #303030;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#overview {
+    text-align: justify;
+    margin-right: 40px;
+    height: 115px;
+    overflow-y: auto;
+    color: #505050;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.ex {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ex:first-child {
+    margin-top: 20px;
+}
+
+#runtime-title, #genres-title, #production-title, #rating-title {
+    color: #303030;
+}
+
+#runtime, #genres, #production, #rating {
+    color: #505050;
+    margin-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 300px;    
+}
+
+#production {
+    line-height: 25px;
+}
+
+
+.wy {
+    font-weight: 700;
+    width: 25%;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.zi {
+    display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+}
+
+

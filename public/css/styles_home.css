@@ -1,0 +1,75 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@keyframes slideleft {
+    from { background-position: 0%; }
+    to { background-position: 90000%; }
+  }
+  
+ #masthead {
+    background-repeat: repeat-x;
+    animation: slideleft 8000s infinite linear;
+    -webkit-animation: slideleft 8000s infinite linear;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/posters.jpg);
+    background-size: cover;
+    background-repeat: repeat-x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box {
+    transition: ease all 0.5s;
+}
+
+.search-box input { 
+    width: 500px;
+    height: 60px;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    color: #303030;
+    padding-right: 50px;
+    float: left;
+    opacity: 0.8;
+    transition: ease all 0.2s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border: 0px;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.search-box input:focus ~ #go-button {
+    font-size: 30px;
+    margin-left: -30px;
+    color: #303030;
+}
+
+.search-box button {
+    margin-left: -50px;
+    height: 60px;
+    line-height: 60px;
+    width: 50px;
+    float: left;
+    font-size: 25px;
+    background-color: transparent;
+    border: 0px;
+    color: #505050;
+    cursor: pointer;
+    position: absolute;
+    transition: ease all 0.2s;
+}
+
+
+
