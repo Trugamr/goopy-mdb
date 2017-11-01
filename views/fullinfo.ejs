@@ -40,7 +40,7 @@
                     <p id="release-title" class="wy">Release Date</p>
                     <p id="release" class="zi">
                         <% var month = ['XD', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; %>
-                        <%= month[data.release_date.split('-')[1]] %> <%=  data.release_date.split('-')[2] %>, <%=  data.release_date.split('-')[0] %>
+                        <%= month[parseInt(data.release_date.split('-')[1])] %> <%=  data.release_date.split('-')[1] %>, <%=  data.release_date.split('-')[0] %>
                     </p>
             </div>
             <div class="ex">
