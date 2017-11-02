@@ -158,14 +158,13 @@
 }
 
 #torrents_icon {
-    width: 110px;
+    width: auto;
     margin-left: 15px;
 }
 
 #torrents_icon i {
     font-size: 25px;
     line-height: 30px;
-    margin-right: 5px;
     vertical-align: middle;
-    color: #44ed7a;
+    color: #EE6352;
 }

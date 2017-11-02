@@ -71,8 +71,8 @@
                     </p>
             </div>
             <div class="footer">
-                <p class="icon" id="youtube_icon" data-remodal-target="youtube-trailer"><i class="fa fa-lg fa-youtube-play"></i> Trailer</p>
-                <p class="icon" id="torrents_icon" onclick="getTorrents('<%= data.imdb_id %>')"><i class="fa fa-magnet"></i>Torrents</p>
+                <p class="icon" id="youtube_icon" data-remodal-target="youtube-trailer"><i class="fa fa-lg fa-youtube-play"></i> trailer</p>
+                <p class="icon" id="torrents_icon" onclick="getTorrents('<%= data.imdb_id %>')"><i class="fa fa-magnet"></i> torrents</p>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
             };
 
             function getTorrents(imdbID) {
-                window.open(window.location.origin + "/torrents=" + imdbID, '_self');
+                window.open(window.origin + "/torrents=" + imdbID, '_self');
             }
     </script>
 </body>
