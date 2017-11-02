@@ -46,7 +46,7 @@
             <div class="ex">
                 <p id="rating-title" class="wy">Rating</p>
                 <% var stars = Math.floor(data.vote_average)/2 %>
-                <% var half = 0; if(data.vote_average - Math.floor(data.vote_average) >= 0.5) { half = 1}; %>
+                <% var half = 0; if(data.vote_average - Math.floor(data.vote_average) >= 0.5) { half = 1 }; %>
                     <p id="rating" class="zi">
                     <% for(var i = 0; i < stars; i++) { %>
                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -71,7 +71,8 @@
                     </p>
             </div>
             <div class="footer">
-                <p class="youtube-icon" data-remodal-target="youtube-trailer"><i class="fa fa-lg fa-youtube-play"></i> Trailer</p>
+                <p class="icon" id="youtube_icon" data-remodal-target="youtube-trailer"><i class="fa fa-lg fa-youtube-play"></i> Trailer</p>
+                <p class="icon" id="torrents_icon" onclick="getTorrents('<%= data.imdb_id %>')"><i class="fa fa-magnet"></i>Torrents</p>
             </div>
         </div>
     </div>
@@ -85,6 +86,10 @@
                     this.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
                 });
             };
+
+            function getTorrents(imdbID) {
+                window.open(window.origin + "/torrents=" + imdbID, '_self');
+            }
     </script>
 </body>
 </html>

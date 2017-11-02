@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title><%= movData.title %> Torrents</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500,300,700" rel="stylesheet">
+        <link rel="stylesheet" href="./css/styles_torrents.css" />        
+    </head>
+    <body>
+        <div class="main">
+            <div class="top">
+                <img id="banner" src="https://image.tmdb.org/t/p/w1920<%= movData.backdrop_path %>">
+                <div class="info">
+                    <p id="title"><%= movData.title %></p>
+                    <p id="year">(<%= movData.release_date.split('-')[0] %>)</p>
+                    <p id="overview"><%= movData.overview %></p>
+                    <p id="genres">
+                        <% var genresAll = []; for(var i = 0; i < movData.genres.length; i++) { genresAll.push(movData.genres[i].name)}; %>
+                        <p id="genres">
+                            <%= genresAll.join(", ") %>
+                        </p>
+                    </p>
+                    <p id="rating">
+                        <% var stars = Math.floor(movData.vote_average)/2 %>
+                        <% var half = 0; if(movData.vote_average - Math.floor(movData.vote_average) >= 0.5) { half = 1 }; %>
+                            <p id="rating">
+                        <% for(var i = 0; i < stars; i++) { %>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        <% } %>
+                        <% if(half) {%>
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <% } %>
+                    </p>
+                </div>
+            </div>
+            <img id="poster" src="https://image.tmdb.org/t/p/w500<%= movData.poster_path %>">
+            <div class="links_container">
+                <% for(var i=0; i < torData.length; i++) {%>
+                <div class="single-torrent">
+                    <a href="<%= torData[i].download %>"><p><%= torData[i].filename %></p><i class="fa fa-magnet"></i></a>
+                </div>  
+                <% } %>                
+            </div>
+        </div>
+        <script src="https://use.fontawesome.com/8aa0402897.js"></script>
+    </body>
+</html>

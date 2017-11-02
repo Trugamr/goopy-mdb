@@ -1,0 +1,131 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-image: url('../images/results.jpg');
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.top {
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner {
+    width: inherit;  
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    filter: blur(10px) brightness(0.75);
+    transform: scale(1.1); 
+}
+
+#poster {
+    position: absolute;
+    top: 40;
+    left: 40;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.info {
+    height: 125px;
+    width: 800px;
+    margin-left: 280px;
+    margin-top: 40px;
+    position: absolute;
+    color: white;
+    font-family: Montserrat, sans-serif;
+}
+
+#title {
+    font-weight: 700;
+    margin-right: 10px;
+    max-width: 650px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+#title, #year {
+    display: inline-block;
+    font-size: 50px;
+    text-transform: uppercase;
+    
+}
+
+#year {
+    opacity: 0.8;
+    display: block;
+}
+
+#overview {
+    max-width: 1000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+#genres {
+    font-size: 20px;
+}
+
+#rating {
+    font-size: 20px;
+    margin: 8px 0px 10px 0px;
+}
+
+.links_container {
+    width: 1000px;
+    height: auto;
+    margin-left: 280px;
+    margin-top: 40px;
+    color: #303030;
+    font-size: 18px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+a:link {
+    color: #303030
+}
+
+.single-torrent p {
+    display: inline-block;
+    width: 975px;
+    cursor: pointer;
+}
+
+.single-torrent p a {
+    text-decoration: none;
+    color: #303030 !important; 
+}
+
+.single-torrent p a:visited, .single-torrent p a:link {
+    color: #303030 !important; 
+}
+
+.single-torrent i {
+    cursor: pointer;
+    color: #f04949 !important;
+}
+
+.single-torrent {
+    border-bottom: 2px solid #d6d6d6;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+

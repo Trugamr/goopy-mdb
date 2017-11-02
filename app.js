@@ -12,6 +12,8 @@ app.get('/search=:search?', routes.result);
 
 app.get('/id=:id?', routes.fullinfo);
 
+app.get('/torrents=:tor_id?', routes.torrents);
+
 app.get('*', routes.notFound);
 
 app.listen(process.env.PORT || 8080, function() {

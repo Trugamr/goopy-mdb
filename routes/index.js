@@ -1,5 +1,9 @@
 const mdb = require('moviedb')('a564e5e6ccf05956046bad91fa92f76c');
+
 var movieTrailer = require('movie-trailer');
+
+const RarbgApi = require('rarbg');
+const rarbg = new RarbgApi();
 
 //home
 exports.home = function(req, res) {
@@ -22,6 +26,7 @@ exports.fullinfo = function(req, res) {
     var id = req.params.id;
     var ytid;
     mdb.movieInfo({ id: id }, (err, data) => {
+        lastMovieJSON = data;
         movieTrailer(data.title, data.release_date.split('-', 1), true,function (err, ytdata) {
             if(ytdata[0].key == undefined || ytid == null)
                 ytid = "RIP";
@@ -33,6 +38,23 @@ exports.fullinfo = function(req, res) {
             })
         });        
     });
+}
+
+//torrents
+exports.torrents = function(req, res) {
+    var tor_id = req.params.tor_id;
+    mdb.movieInfo({ id: tor_id }, (err, movieData) => {
+        rarbg.search({
+            search_imdb: tor_id,
+            sort: 'seeders'
+        }).then(function(torrentData) {
+            res.render('torrents', {
+                tor_id: tor_id,
+                torData: torrentData,
+                movData: movieData
+            })
+        })
+    })
 }
 
 //404

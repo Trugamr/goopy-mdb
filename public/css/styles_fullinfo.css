@@ -139,13 +139,8 @@
     margin-left: -10px;
 }
 
-.youtube-icon i {
-    color: #EE6352;
-    line-height: 30px;
-    font-size: 35px;
-}
 
-.youtube-icon {
+.icon {
     color: #505050 !important;
     background-color: #f0f0f0;
     border-radius: 5px;
@@ -153,4 +148,24 @@
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
+    display: inline-block;
+}
+
+#youtube_icon i {
+    color: #EE6352;
+    font-size: 35;
+    line-height: 30px;
+}
+
+#torrents_icon {
+    width: 110px;
+    margin-left: 15px;
+}
+
+#torrents_icon i {
+    font-size: 25px;
+    line-height: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+    color: #44ed7a;
 }
