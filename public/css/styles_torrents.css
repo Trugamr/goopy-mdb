@@ -3,12 +3,6 @@
     margin: 0px;
 }
 
-body {
-    background-image: url('../images/results.jpg');
-    background-size: contain;
-    background-attachment: fixed;
-}
-
 .top {
     height: 220px;
     width: 100%;
