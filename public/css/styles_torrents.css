@@ -4,10 +4,11 @@
 }
 
 .top {
-    height: 220px;
+    height: 225px;
     width: 100%;
     overflow: hidden;
-    position: relative;
+    position: fixed;
+    top: 0;
 }
 
 #banner {
@@ -23,7 +24,7 @@
 }
 
 #poster {
-    position: absolute;
+    position: fixed;
     top: 40;
     left: 40;
     width: 200px;
@@ -84,7 +85,7 @@
     width: 1000px;
     height: auto;
     margin-left: 280px;
-    margin-top: 40px;
+    margin-top: 265px;
     color: #303030;
     font-size: 18px;
     font-family: Montserrat, sans-serif;
@@ -117,7 +118,7 @@ a:link {
 }
 
 .single-torrent {
-    border-bottom: 2px solid #d6d6d6;
+    border-bottom: 2px solid #f1f1f1;
     padding-bottom: 5px;
     margin-bottom: 10px;
 }
