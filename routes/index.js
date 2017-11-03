@@ -81,8 +81,7 @@ exports.fullinfoJSON = function(req, res) {
             data.ytid = ytid;
             data.exid = id;
             res.set({
-                'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': '*',
             });
             res.json(data);
         });        
