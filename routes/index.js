@@ -61,3 +61,27 @@ exports.torrents = function(req, res) {
 exports.notFound = function(req, res) {
     res.send("The page you are looking for doesn't exist on this server :(");
 }
+
+//JSON Response 
+exports.resultJSON = function(req, res) {
+    var search = req.params.search;
+    mdb.searchMovie({ query: search }, (err, data) => {
+        res.json(data);
+    });
+}
+
+exports.fullinfoJSON = function(req, res) {
+    var id = req.params.id;
+    var ytid;
+    mdb.movieInfo({ id: id }, (err, data) => {
+        lastMovieJSON = data;
+        movieTrailer(data.title, data.release_date.split('-', 1), true,function (err, ytdata) {
+            if(ytdata[0].key == undefined || ytid == null)
+                ytid = "RIP";
+            ytid = ytdata[0].key;
+            data.ytid = ytid;
+            data.exid = id;
+            res.json(data);
+        });        
+    });
+}

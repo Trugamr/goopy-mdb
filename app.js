@@ -10,7 +10,11 @@ app.get('/', routes.home);
 
 app.get('/search=:search?', routes.result);
 
+app.get('/search=:search?/JSON', routes.resultJSON);
+
 app.get('/id=:id?', routes.fullinfo);
+
+app.get('/id=:id?/JSON', routes.fullinfoJSON);
 
 app.get('/torrents=:tor_id?', routes.torrents);
 
