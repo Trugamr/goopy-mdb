@@ -17,7 +17,8 @@ exports.result = function(req, res) {
         res.render('result', {
             search: search,
             data: data
-        })
+        });
+        res.json(data);
     });
 }
 
