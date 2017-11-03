@@ -66,6 +66,9 @@ exports.notFound = function(req, res) {
 exports.resultJSON = function(req, res) {
     var search = req.params.search;
     mdb.searchMovie({ query: search }, (err, data) => {
+        res.set({
+            'Access-Control-Allow-Origin': '*',
+        });
         res.json(data);
     });
 }
