@@ -31,10 +31,6 @@ exports.fullinfo = function(req, res) {
             if(ytdata[0].key == undefined || ytid == null)
                 ytid = "RIP";
             ytid = ytdata[0].key;
-            res.set({
-                'Content-Type' : 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            });
             res.render('fullinfo', {
                 data: data,
                 ytid: ytid,
@@ -48,6 +44,10 @@ exports.fullinfo = function(req, res) {
 exports.torrents = function(req, res) {
     var tor_id = req.params.tor_id;
     mdb.movieInfo({ id: tor_id }, (err, movieData) => {
+        res.set({
+            'Content-Type' : 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        });
         rarbg.search({
             search_imdb: tor_id,
             sort: 'seeders'
