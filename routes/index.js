@@ -31,6 +31,10 @@ exports.fullinfo = function(req, res) {
             if(ytdata[0].key == undefined || ytid == null)
                 ytid = "RIP";
             ytid = ytdata[0].key;
+            res.set({
+                'Content-Type' : 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            });
             res.render('fullinfo', {
                 data: data,
                 ytid: ytid,
